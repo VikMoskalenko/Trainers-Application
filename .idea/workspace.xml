@@ -4,41 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07729800-9a5f-489d-96d7-105a494948bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TrainersApp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TrainersApp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TrainersApp/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TrainersApp/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TrainersApp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TrainersApp/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/booking/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+    <list default="true" id="07729800-9a5f-489d-96d7-105a494948bf" name="Changes" comment="Created project in Django">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,11 +88,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733823492466</updated>
-      <workItem from="1733823542504" duration="2540000" />
+      <workItem from="1733823542504" duration="3647000" />
     </task>
+    <task id="LOCAL-00001" summary="Created project in Django">
+      <option name="closed" value="true" />
+      <created>1733854408961</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733854408961</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created project in Django" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created project in Django" />
   </component>
 </project>
