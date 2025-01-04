@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainer</title>
+</head>
+<body>
+<h1>My service</h1>
+{% for service in services %}
+    <br>{{ service.category.name }}
+    <br>{{ service.price }}
+    <br>{{ service.duration}}
+    <br>{{ service.level }}</br>
+
+{% endfor %}
+<p></p>
+<h1>Add Trainer Service</h1>
+<form action="/service/" method="POST">
+    <div>
+    {% csrf_token %}
+        Category: 
+        <select name="category">
+            {% for category in categories %}
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    Duration: <input type="number" name="duration"></input>
+    Price: <input type="number" name="price"></input>
+    Level: 
+    <select name="level">
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+    </select>
+    
+    </div>
+     <input type="submit" value="Submit">
+    
+</form>
+</body>
+</html>

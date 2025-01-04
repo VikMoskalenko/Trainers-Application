@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07729800-9a5f-489d-96d7-105a494948bf" name="Changes" comment="Created project in Django">
-      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+    <list default="true" id="07729800-9a5f-489d-96d7-105a494948bf" name="Changes" comment="git ignore file">
+      <change afterPath="$PROJECT_DIR$/booking/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/trainer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainer/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/booking/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TrainersApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TrainersApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,6 @@
     "Django Server.TrainersApp.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -112,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733823492466</updated>
       <workItem from="1733823542504" duration="4255000" />
-      <workItem from="1735842086541" duration="7684000" />
+      <workItem from="1735842086541" duration="14956000" />
     </task>
     <task id="LOCAL-00001" summary="Created project in Django">
       <option name="closed" value="true" />
@@ -130,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733863032872</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lesson 15">
+      <option name="closed" value="true" />
+      <created>1735850490378</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735850490378</updated>
+    </task>
+    <task id="LOCAL-00004" summary="git ignore file">
+      <option name="closed" value="true" />
+      <created>1735986154936</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1735986154936</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +162,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created project in Django" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created project in Django" />
+    <MESSAGE value="lesson 15" />
+    <MESSAGE value="git ignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="git ignore file" />
   </component>
 </project>
