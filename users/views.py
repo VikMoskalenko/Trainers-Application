@@ -1,5 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -41,5 +41,11 @@ def register(request):
 
         user = User.objects.create_user(username, email, password, firstname=firstname, lastname=lastname)
 
+
+       # user.groups.add(1)
+
+        #get trainer group
+        client_group = Group.objects.get(name="Client")
+        user.groups.add(client_group)
         user.save()
         return HttpResponse("Hello, world. You're at the polls index.")
