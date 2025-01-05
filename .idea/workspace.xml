@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07729800-9a5f-489d-96d7-105a494948bf" name="Changes" comment="Lesson 16">
-      <change afterPath="$PROJECT_DIR$/templates/account.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/trainer_signup.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainer/utils.py" afterDir="false" />
+    <list default="true" id="07729800-9a5f-489d-96d7-105a494948bf" name="Changes" comment="Lesson 17">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TrainersApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TrainersApp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/booking/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booking/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/booking/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainer/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1733823492466</updated>
       <workItem from="1733823542504" duration="4255000" />
-      <workItem from="1735842086541" duration="24420000" />
+      <workItem from="1735842086541" duration="27377000" />
     </task>
     <task id="LOCAL-00001" summary="Created project in Django">
       <option name="closed" value="true" />
@@ -158,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735991871106</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Lesson 17">
+      <option name="closed" value="true" />
+      <created>1736010998177</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736010998177</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,6 +180,7 @@
     <MESSAGE value="lesson 15" />
     <MESSAGE value="git ignore file" />
     <MESSAGE value="Lesson 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson 16" />
+    <MESSAGE value="Lesson 17" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 17" />
   </component>
 </project>

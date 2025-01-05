@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trainer Service Page</title>
+</head>
+<body>
+<h1>Service page</h1>
+    <br>{{ specific_service.category.name }}
+    <br>{{ specific_service.duration }}
+    <br>{{ specific_service.trainer.first_name}} 
+    <br>{{ specific_service.trainer.last_name}}</br>
+    <br>{{ specific_service.category }}</br>
+    <br>{{ specific_service.price}}</br>
+    <br>{{ specific_service.level }}
+
+<form action="/trainer/{{ specific_service.trainer_id }}/{{ specific_service.id }}" method="POST">
+    {% csrf_token %}
+    <label for="training_start">Select start time:</label>
+    <select id="training_start" name="training_start">
+        {% for training_start in available_times %}
+        <option value="{{ training_start }}">{{ training_start }}</option>
+        {% endfor %}
+    </select>
+    
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

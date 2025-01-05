@@ -1,8 +1,11 @@
+from datetime import datetime
+from dateutil import parser
 from django.contrib.auth.models import User, Group
 from django.http import HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect
-
+from trainer.utils import booking_time
 import trainer.models
+import booking.models as booking_models
 #from django.contrib.auth.models import Group
 
 
@@ -25,7 +28,28 @@ def trainer_page(request, trainer_id):
         trainer_schedule = trainer.models.Trainer_Schedule.objects.filter(trainer=trainer_model)
         return render(request, "account.html", context={"trainer_data": trainer_data, "trainer_schedule": trainer_schedule})
 
-def trainer_service_page(request, user_id, service_id):
+def trainer_service_page(request, trainer_id, service_id):
+    current_trainer = User.objects.get(pk=trainer_id)
+    specific_service = trainer.models.Service.objects.get(pk=service_id)
+    if request.method == 'GET':
+
+        available_times = []
+        i = 1
+        today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+        while i <= 7:
+            cur_date = datetime.datetime(today.year, today.month, today.day) + datetime.timedelta(days=i)
+            training_bookings = booking_models.Booking.objects.filter(trainer=current_trainer, datetime_start__date=cur_date.date()).all()
+            booking_list = [(itm.datetime_start, itm.datetime_end) for itm in training_bookings]
+            training_schedule = trainer.models.Trainer_Schedule.objects.filter(trainer=current_trainer, datetime_start__date=cur_date.date()).values('datetime_start', 'datetime_end')
+
+            available_times += trainer.utils.booking_time(training_schedule, training_bookings, cur_date)
+            i += 1
+        return render(request, 'trainer_service_page.html',context={'specific_service': specific_service, 'available_times': available_times })
+    else:
+        booking_start = parser.parse(request.POST.get('booking_start'))
+        current_user = User.objects.get(id=request.user.id)
+        booking_models.Booking.objects.create(trainer=current_trainer, user=current_user, service=specific_service, datetime_start=booking_start, datetime_end=booking_start+datetime.timedelta(minutes=specific_service.duration))
+
     return HttpResponse("<h1>Welcome to my trainer service page</h1>")
 
 def service_page(request):
