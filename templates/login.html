@@ -6,9 +6,12 @@
 </head>
 <body>
 <form action="/login/" method="post">
+       <a href="{% url 'homepage' %}">Go to Homepage</a> 
     {% csrf_token %}
-    Username:<input type = "text" name = "username"><br></br>
-    Password:<input type = "password" name = "password"><br></br>
+    {{ form_login.as_p }}
+    
+{#{  Username:<input type = "text" name = "username"><br></br>#}
+{#{ Password:<input type = "password" name = "password"><br></br>#}
     
      <input type = "submit" value = "Submit">
 </form>

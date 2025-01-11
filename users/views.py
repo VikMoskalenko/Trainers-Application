@@ -1,27 +1,36 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User, Group
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from users import forms
 
 # Create your views here.
+
 def user_page(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    form_login = forms.loginForm()
+    return render(request, 'account.html', context={'form_login': form_login})
+    #return HttpResponse("Hello, world. You're at the polls index.")
 
 def specific_user(request, user_id):
     return HttpResponse("Hello, world. You're at the polls index.")
 
 def login_page(request):
     if request.method == 'GET':
-        return render(request, 'login.html')
+        form_login = forms.loginForm()
+        return render(request, 'login.html', context = {'form_login': form_login})
     else:
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return HttpResponse("You are now logged in.")
-        else:
-            return render(request, 'login.html')
+        form_login = forms.loginForm(request.POST)
+        # username = request.POST.get('username')
+        # password = request.POST.get('password')
+        if form_login.is_valid():
+            username = form_login.cleaned_data['username']
+            password = form_login.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return render(request, 'account.html')
+
+        return render(request, 'login.html')
 
 def logout_page(request):
     if request.user.is_authenticated:
@@ -30,22 +39,15 @@ def logout_page(request):
     return HttpResponse("You need to be logged in first.")
 
 def register(request):
-    if request.method == 'GET':
-        return render(request, 'register.html')
+    if request.method == 'POST':
+        register_form = forms.registerForm(request.POST)
+        if register_form.is_valid():
+            new_user = register_form.save()
+            # Optionally, assign groups
+            client_group = Group.objects.get(name="Client")
+            new_user.groups.add(client_group)
+            return render(request, 'login.html')
+
     else:
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        email = request.POST.get('email')
-        firstname = request.POST.get('firstname')
-        lastname = request.POST.get('lastname')
-
-        user = User.objects.create_user(username, email, password, firstname=firstname, lastname=lastname)
-
-
-       # user.groups.add(1)
-
-        #get trainer group
-        client_group = Group.objects.get(name="Client")
-        user.groups.add(client_group)
-        user.save()
-        return HttpResponse("Hello, world. You're at the polls index.")
+        register_form = forms.registerForm()
+    return render(request, 'register.html', {'register_form': register_form})

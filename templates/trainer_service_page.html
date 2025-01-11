@@ -6,6 +6,8 @@
 </head>
 <body>
 <h1>Service page</h1>
+   <a href="{% url 'homepage' %}">Go to Homepage</a> 
+
     <br>{{ specific_service.category.name }}
     <br>{{ specific_service.duration }}
     <br>{{ specific_service.trainer.first_name}} 

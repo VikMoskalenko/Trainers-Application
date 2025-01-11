@@ -13,7 +13,7 @@ class Trainer_Schedule(models.Model):
     datetime_end = models.DateField()
     trainer = models.ForeignKey(User, on_delete=models.CASCADE)
 
-class Service(models.Model):
+class Services(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     trainer = models.ForeignKey(User, on_delete=models.CASCADE)
     price = models.FloatField()

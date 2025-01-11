@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Account</title>
+    <title>Trainer Account</title>
 </head>
 <body>
 <a href="{% url 'homepage' %}">Go to Homepage</a> 
-<br>
-<h1>Your page, {{ username }} </h1>
+
+Your page, {{ trainer_data }} 
 <br>
 {%  for day in trainer_schedule %}
 {{ day }}
 {% endfor %}
-
-</form>
 </body>
 </html>

@@ -6,12 +6,15 @@
 </head>
 <body>
 <form action="/register/trainer/" method="post">
+       <a href="{% url 'homepage' %}">Go to Homepage</a> 
+    
     {% csrf_token %}
-    Username: <input type="text" name="username"><br>
-    Password: <input type="password" name="password"><br>
-    First Name: <input type="text" name="first_name"><br>
-    Last Name: <input type="text" name="last_name"><br>
-    Email: <input type="email" name="email"><br>
+    {{ trainer_signup.as_p }}
+{#    Username: <input type="text" name="username"><br>#}
+{#    Password: <input type="password" name="password"><br>#}
+{#    First Name: <input type="text" name="first_name"><br>#}
+{#    Last Name: <input type="text" name="last_name"><br>#}
+{#    Email: <input type="email" name="email"><br>#}
     <br>
         <input type="submit" value="Register"></input>
 

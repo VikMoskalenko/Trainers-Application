@@ -21,6 +21,8 @@ from django.urls import path, include
 import booking
 import trainer.views
 import users.views
+from trainer import views
+from trainer.views import homepage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,10 +33,12 @@ urlpatterns = [
     path("register/trainer", trainer.views.trainer_registration, name="trainer_registration"),
     path("trainer/", include("trainer.urls")),
     path("category/", trainer.views.category_page, name="trainer_category"),
-    path("service/", trainer.views.service_page, name="trainer_service"),
+    path("trainer/service/", trainer.views.service_page, name="service_page"),
     path("userbook/", trainer.views.booking_for_user, name="booking_for_user"),
     path("booking/", include("booking.urls")),
     path("cancel/", booking.views.booking_cancel, name="booking_cancel"),
-    path("acception/", booking.views.booking_acception, name="booking_acception")
+    path("acception/", booking.views.booking_acception, name="booking_acception"),
+    path("", homepage, name="homepage"),
+
 
 ]
