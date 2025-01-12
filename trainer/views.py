@@ -3,7 +3,6 @@ from django.contrib.auth.models import User, Group
 from django.http import HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect
 from datetime import datetime, timedelta
-#
 from trainer import models
 from trainer.utils import booking_time
 import trainer.models
@@ -107,7 +106,7 @@ def trainer_registration(request):
             trainer_group = Group.objects.get(name="Trainer")
             created_user = trainer_signup.save()
             created_user.groups.add(trainer_group)
-            return redirect('user_login')  # Redirect to login page
+            return redirect('user_login')
         else:
             return render(request, 'trainer_signup.html', {'trainer_signup': trainer_signup})
 

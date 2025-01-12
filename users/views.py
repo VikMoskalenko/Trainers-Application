@@ -1,8 +1,12 @@
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User, Group
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from pyexpat.errors import messages
+
 from users import forms
+from users.forms import UpdateProfileForm
+
 
 # Create your views here.
 
@@ -12,7 +16,30 @@ def user_page(request):
     #return HttpResponse("Hello, world. You're at the polls index.")
 
 def specific_user(request, user_id):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    if request.user.is_authenticated:
+        if request.method == 'GET':
+            user_profile = get_object_or_404(User, id=user_id)
+            #current_user = User.objects.get(id=user_id)
+            update_form = UpdateProfileForm(initial={'first_name': user_profile.first_name,
+                                                     'last_name': user_profile.last_name,
+                                                     'email': user_profile.email,})
+            group_list =[]
+            for group in request.user.groups.all():
+                group_list.append(group.name)
+            context = {
+                'user_profile': user_profile,
+                'group_list': group_list,
+                 'update_form': update_form,
+            }
+            return render(request, 'profile.html')
+    elif request.method == 'POST':
+        update_form = UpdateProfileForm(request.POST)
+        if update_form.is_valid():
+            User.objects.filter(id=user_id).update(**update_form.cleaned_data)
+        messages.success(request, f'Your account has been edited successfully!')
+        return redirect(f'/user/{user_id}')
+    else:
+        return render(request, 'homepage.html', context={'is_authenticated': False} )
 
 def login_page(request):
     if request.method == 'GET':
@@ -43,7 +70,7 @@ def register(request):
         register_form = forms.registerForm(request.POST)
         if register_form.is_valid():
             new_user = register_form.save()
-            # Optionally, assign groups
+            # Optionally, assign group
             client_group = Group.objects.get(name="Client")
             new_user.groups.add(client_group)
             return render(request, 'login.html')
