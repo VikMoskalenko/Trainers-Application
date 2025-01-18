@@ -1,8 +1,9 @@
 from dateutil import parser
+import datetime, timedelta
 from django.contrib.auth.models import User, Group
 from django.http import HttpResponse, HttpResponseForbidden
 from django.shortcuts import render, redirect
-from datetime import datetime, timedelta
+#from datetime import timedelta
 from trainer import models
 from trainer.utils import booking_time
 import trainer.models
@@ -47,12 +48,14 @@ def trainer_service(request, trainer_id, service_id):
             cur_date = today + datetime.timedelta(days=i)
             training_bookings = booking_models.Booking.objects.filter(
                 trainer=current_trainer,
-                datetime_start__date=cur_date.date()
+                datetime_start=cur_date.date()
+                #datetime_start__date=cur_date.date()
             ).all()
             booking_list = [(itm.datetime_start, itm.datetime_end) for itm in training_bookings]
             training_schedule = trainer.models.Trainer_Schedule.objects.filter(
                 trainer=current_trainer,
-                datetime_start__date=cur_date.date()
+                datetime_start=cur_date.date()
+                #datetime_start__date=cur_date.date()
             ).values('datetime_start', 'datetime_end')
             available_times += trainer.utils.booking_time(training_schedule, training_bookings, cur_date)
             i += 1
