@@ -11,7 +11,7 @@ import booking.models as booking_models
 from users.models import User as CustomUser
 from users.forms import registerForm
 from trainer.models import Services
-
+from django.utils import timezone
 # Create your views here.
 def homepage(request):
     return render(request, 'homepage.html')
@@ -40,7 +40,7 @@ def trainer_service(request, trainer_id, service_id):
     specific_service = models.Services.objects.get(pk=service_id)
 
     if request.method == 'GET':
-        today = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+        today =  timezone.now().replace(hour=0, minute=0, second=0, microsecond=0)
         i = 1
         available_times = []
 
@@ -73,7 +73,8 @@ def trainer_service(request, trainer_id, service_id):
             datetime_start=booking_start,
             datetime_end=booking_start + datetime.timedelta(minutes=specific_service.duration)
         )
-        return redirect("trainer_service", trainer_id=trainer_id, service_id=service_id)
+        #return redirect("trainer_service", trainer_id=trainer_id, service_id=service_id)
+        return render(request, "trainer_service_page.html")
 
 def service_page(request):
     if request.method == 'GET':
@@ -111,6 +112,7 @@ def trainer_registration(request):
             created_user.groups.add(trainer_group)
             return redirect('user_login')
         else:
+            print(trainer_signup.errors)  # Debugging line
             return render(request, 'trainer_signup.html', {'trainer_signup': trainer_signup})
 
     # if request.method == 'GET':
